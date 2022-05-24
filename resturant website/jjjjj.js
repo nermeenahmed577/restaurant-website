@@ -17,8 +17,8 @@ function pageLoad(){
 }
 
 
-    
 
+//validate();
 
 function validate(){
 var check=true;
@@ -29,12 +29,9 @@ var password=document.getElementById("password").value;
 var phone=document.getElementById("phone").value;
 var your=document.getElementById("your").value;
 
-
-
 if(fname=="")
 {
-
-  alert ("Frist name is required !");
+  alert ("First name is required !");
   check=false;
   return check;
 }
@@ -60,6 +57,35 @@ alert("only letters or space allowed in name fild");
 check=false;
   return check;
 }
+if(email=="")
+{
+  alert ("Email is required");
+  check=false;
+  return check;
+}
+if(!email.match(/^[a-zA-z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/))
+{
+alert("Email is not valid");
+check=false;
+  return check;
+}
+
+
+
+if(password=="")
+{
+  alert ("password is required");
+  check=false;
+  return check;
+}
+
+if(!password.match(/^(?=.*\d)(?!.* )(?=.*[a-z])(?=.*[A-Z]{1}).{8}/))
+{
+    alert("Password is Not valid, It must contain 8 characters : 1 uppercase, 1 lowercase, 1 number and 1 special character at Least");
+ check=false;
+  return check;
+}
+
 
 if(phone== "")
 {
@@ -75,34 +101,6 @@ check=false;
 }
 
 
-if(email=="")
-{
-  alert ("Email is required");
-  check=false;
-  return check;
-}
-if(!email.match(/^[a-zA-z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/))
-{
-alert("Email is not valid");
-check=false;
-  return check;
-}
-
-
-if(password=="")
-{
-  alert ("password is required");
-  check=false;
-  return check;
-}
-
-if(!password.match(/^(?=.*\d)(?!.* )(?=.*[a-z])(?=.*[A-Z]{1}).{8}/))
-{
-    alert("Password is Not valide, It must contain 8 characters : 1 uppercase, 1 lowercase, 1 number and 1 special character at Least");
- check=false;
-  return check;
-}
-
 
 if(your== "")
 {
@@ -110,6 +108,8 @@ if(your== "")
   check=false;
   return check;
 }
+
+
 
 
 if (check==true){
@@ -142,12 +142,12 @@ window.onscroll = () =>{
 
 }
 
-function loader(){
-  document.querySelector('.loader-container').classList.add('fade-out');
-}
+// function loader(){
+//   document.querySelector('.loader-container').classList.add('fade-out');
+// }
 
-function fadeOut(){
-  setInterval(loader, 3000);
-}
+// function fadeOut(){
+//   setInterval(loader, 3000);
+// }
 
-window.onload = fadeOut();
+// window.onload = fadeOut();
