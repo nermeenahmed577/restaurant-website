@@ -119,7 +119,12 @@ check=false;
 }
 
 
-
+if(this.radio[0].checked==false && this.radio[1].checked==false )
+{
+  alert ('Please Select Gender');
+  check=false;
+  return check;
+}
 
 
 
