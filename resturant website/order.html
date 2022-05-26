@@ -38,7 +38,7 @@
         <div class="image">
             <img src="images/order-img.jpg" alt="">
         </div>
-        <form id="form" >
+        <form id="form" action="index.html" >
             <div class="inputbox" >
                 <input type="text" placeholder="First Name" id="firstname" value="" name="firstname">
                 <input type="text" placeholder="Last Name" id="lastname" value="" name="lastname">
@@ -52,15 +52,15 @@
             </div>
             <div class="inputbox" >
                 <label class="container">Female
-                 <input type="radio"  name="radio">
+                 <input type="radio"  name="radio" id="gender" value="" required >
                  <span class="checkmark"></span>
                </label>
                <label class="container">Male
-                 <input type="radio" name="radio">
+                 <input type="radio" name="radio" id="gender" value="" >
                  <span class="checkmark"></span>
                </label>
              </div>
-            <textarea placeholder="Address" name="" id="" cols="30" rows="10" ></textarea>
+            <textarea placeholder="Address" name="" id="location" cols="30" rows="10" value=""></textarea>
             <input type="submit" value="order now" class="btn">
         </form>
     </div>
@@ -80,7 +80,8 @@
 </section>
 
 
-
+<!-- scroll top button  -->
+<a href="order.html" class="fas fa-angle-up" id="scroll-top"></a>
 
 
 

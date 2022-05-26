@@ -28,6 +28,8 @@ var email=document.getElementById("email").value;
 var password=document.getElementById("password").value;
 var phone=document.getElementById("phone").value;
 var your=document.getElementById("your").value;
+var location=document.getElementById("location").value;
+
 
 if(fname=="")
 {
@@ -37,7 +39,7 @@ if(fname=="")
 }
 if(!fname.match(/^[A-Za-z]+$/))
 {
-alert("only letters or space allowed in name fild");
+alert("Only letters are allowed  in First name field");
 check=false;
   return check;
 }
@@ -53,7 +55,7 @@ if(lname=="")
 }
 if(!lname.match(/^[A-Za-z]+$/))
 {
-alert("only letters or space allowed in name fild");
+alert("Only letters allowed  in Last name field");
 check=false;
   return check;
 }
@@ -79,12 +81,13 @@ if(password=="")
   return check;
 }
 
-if(!password.match(/^(?=.*\d)(?!.* )(?=.*[a-z])(?=.*[A-Z]{1}).{8}/))
+if(!password.match(/^(?=.*\d)(?!.* )(?=.*[a-z])(?=.*[A-Z]{1}).{8}/) || password[0]==password[0].toLowerCase())
 {
     alert("Password is Not valid, It must contain 8 characters : 1 uppercase, 1 lowercase, 1 number and 1 special character at Least");
  check=false;
   return check;
 }
+
 
 
 if(phone== "")
@@ -108,7 +111,30 @@ if(your== "")
   check=false;
   return check;
 }
+if(!your.match(/^[a-zA-Z\s]*$/))
+{
+alert("only letters or space allowed in order field");
+check=false;
+  return check;
+}
 
+
+
+
+
+
+if(location== "")
+{
+  alert ('Your location is required');
+  check=false;
+  return check;
+}
+if(!location.match(/^[a-zA-Z\s]*$/))
+{
+alert("only letters or space allowed in location field");
+check=false;
+  return check;
+}
 
 
 
@@ -142,12 +168,3 @@ window.onscroll = () =>{
 
 }
 
-// function loader(){
-//   document.querySelector('.loader-container').classList.add('fade-out');
-// }
-
-// function fadeOut(){
-//   setInterval(loader, 3000);
-// }
-
-// window.onload = fadeOut();
